@@ -34,7 +34,6 @@ int main()
 	DeQueue(Q1, temp);//断点②
 	DeQueue(Q1, temp);
 	DeQueue(Q1, temp);
-
 	//链式队列实验 结束
 
 	//循环队列实验 开始
@@ -46,7 +45,7 @@ int main()
 	EnQueue(Q2,'c');
 	EnQueue(Q2,'d');
 
-	EnQueue(Q2,'e');//此处入队是否成功？NO
+	EnQueue(Q2,'e');//此处入队是否成功？
 
 	DeQueue(Q2, temp);//断点④
 	DeQueue(Q2, temp);
@@ -55,7 +54,7 @@ int main()
 
 	for(int i=0; i<4; i++)
 		EnQueue(Q2,'f'+i);
-	EnQueue(Q2,'j');//断点⑤ 此处入队是否成功？NO
+	EnQueue(Q2,'j');//断点⑤ 此处入队是否成功？
 	//循环队列实验 结束
 
 	/*
