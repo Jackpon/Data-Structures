@@ -11,8 +11,8 @@ struct QNode
 
 typedef struct 
 { //队列结构
-	QNode	*front;
-	QNode	*rear; 
+	QNode	*front; //指针指向队头元素
+	QNode	*rear; 	//指针指向队尾元素的下个位置
 }LinkQueue; 
 
 //初始化带头结点的链队列
