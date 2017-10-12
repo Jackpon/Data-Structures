@@ -25,7 +25,7 @@ int QueueEmpty(SqQueue &Q)
 //循环队列入队
 int EnQueue(SqQueue &Q, ElemType item )
 {
-	if((Q.rear+1)%MaxSize==Q.front)
+	if((Q.rear+1)%MaxSize==Q.front) //预留一个元素空间
 	{
 		cout<<"队满"; 
 		return 0;
