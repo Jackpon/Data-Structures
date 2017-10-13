@@ -20,7 +20,7 @@ int ListEmpty(SqList &L);
 int ListLength(SqList &L);
 
 //返回i位置的值
-int GetElem(SqList &L, int i, DataType *e);
+int GetElem(SqList &L, int i, DataType &e);
 
 //返回e的位置
 int LocateElem(SqList &L, DataType e);
@@ -29,7 +29,7 @@ int LocateElem(SqList &L, DataType e);
 int ListInsert(SqList &L, int i, DataType e);
 
 //删除数据
-int ListDelete(SqList &L, int i, DataType *e);
+int ListDelete(SqList &L, int i, DataType &e);
 
 //清空线性表
 //void ClearList(SqList * L);

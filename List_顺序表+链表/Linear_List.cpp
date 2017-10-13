@@ -19,7 +19,7 @@ int ListLength(SqList & L)
 	return L.length;
 }
 
-int GetElem(SqList & L, int i, DataType * e)
+int GetElem(SqList & L, int i, DataType &e)
 {
 	if (i < 1 || i > L.length)
 	{
@@ -68,7 +68,7 @@ int ListInsert(SqList & L, int i, DataType e)
 	return 1;
 }
 
-int ListDelete(SqList & L, int i, DataType * e)
+int ListDelete(SqList & L, int i, DataType &e)
 {
 	if (ListEmpty(L)) {                  //判表满
 		cout << "空表，无法删除" << endl;
