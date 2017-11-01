@@ -25,7 +25,8 @@ int EnQueue( LinkQueue &Q, ElemType item )
 
 	QNode *t=new QNode; //①生成新结点
 	if(t==NULL) {cout<<"出错";return 0;}
-	t->data=item; t->next=NULL;	
+	t->data=item;
+	t->next=NULL;	
 
 	Q.rear->next=t; //②在尾结点后插入新结点
 
