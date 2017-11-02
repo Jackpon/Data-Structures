@@ -43,3 +43,6 @@ int BTreeCount(BTNode *root);
 
 //查找二叉树中值为item的结点
 BTNode* FindBTree(BTNode* root, ElemType item);
+
+//反转二叉树
+void InvertBiTree(BTNode *root);

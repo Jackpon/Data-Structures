@@ -151,3 +151,15 @@ BTNode * FindBTree(BTNode * root, ElemType item)
 		return FindBTree(root->rchild, item);
 
 }
+
+void InvertBiTree(BTNode* root)
+{
+	if (root == NULL)
+		return;
+	BTNode* item = root->lchild;
+	root->lchild = root->rchild;
+	root->rchild = item;
+	InvertBiTree(root->lchild);
+	InvertBiTree(root->rchild);
+	
+}

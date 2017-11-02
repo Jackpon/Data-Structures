@@ -12,7 +12,10 @@ int main()
 
 	TreeInit(root);//初始化空二叉树
 	CreateBTree_Pre(root, A);//以前序遍历序列建立二叉树
-
+	PreOrder(root);//输出前序遍历序列
+	cout << endl;
+	InvertBiTree(root);
+	PreOrder(root);
 	//cout << "前序遍历序列：";
 	//PreOrder(root);//输出前序遍历序列
 	//cout << endl;
@@ -21,8 +24,8 @@ int main()
 	//PostOrder(root);
 	//cout << endl;
 
-	cout<<BTreeCount(root);
-	cout<<FindBTree(root,'C');
+	/*cout<<BTreeCount(root);
+	cout<<FindBTree(root,'C');*/
 
 	return 0;
 }
