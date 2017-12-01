@@ -114,26 +114,52 @@ void TopSort(ALGraph *G)
 		}
 	}
 }
+//邻接表的DFS
+void DFS(ALGraph *G,int visited[],int v,char c[]) {
+	ArcNode *p;
+	visited[v] = 1;
+	printf("%c",c[v]);
+	p = G->adjlist[v].firstarc;
+	while (p != NULL)
+	{
+		if (visited[p->adjvex] == 0)
+			DFS(G,visited,p->adjvex,c);
+		p = p->nextarc;
+	}
+}
+
+//邻接表的BFS
+void BFS(ALGraph *G, int visited[], int v, char c[]) {
+	int w, i;
+	ArcNode *p;
+	
+
+}
 
 void main()
 {
 	int i, j;
 	MGraph g;
 	ALGraph *G;
-	int A[MAXV][6] = {
-		{ 0,0,1,0,0,0 },
-		{ 0,0,1,1,0,0 },
-		{ 0,0,0,0,1,0 },
-		{ 0,0,0,0,0,1 },
-		{ 0,0,0,0,0,1 },
-		{ 0,0,0,0,0,0 } };
-	g.n = 6; g.e = 6;
+	int visited[7] = {0};
+	char c[] = {'A','B','C','D','E','F','G'};
+	int m[7][7] = {
+		{ 0,0,1,0,0,0,1 },
+		{ 0,0,1,0,0,0,0 },
+		{ 1,1,0,0,0,0,1 },
+		{ 0,0,0,0,0,0,1 },
+		{ 0,0,0,0,0,1,1 },
+		{ 0,0,0,0,1,0,0 },
+		{ 1,0,1,1,1,0,0 },
+	};
+	g.n = 7; g.e = 7;
 	for (i = 0; i<g.n; i++)
 		for (j = 0; j<g.n; j++)
-			g.edges[i][j] = A[i][j];
+			g.edges[i][j] = m[i][j];
 	G = (ALGraph *)malloc(sizeof(ALGraph));
 	MatToList(g, G);
-	DispAdj(G);
+	DFS(G,visited,0,c);
+	/*DispAdj(G);
 	printf("\n");
-	printf("拓扑序列:"); TopSort(G); printf("\n");
+	printf("拓扑序列:"); TopSort(G); printf("\n");*/
 }
