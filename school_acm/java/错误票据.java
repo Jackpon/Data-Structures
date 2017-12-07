@@ -70,3 +70,37 @@ public class Main {
 		out();
 	}
 }
+
+//下面是c++实现方式
+#include<iostream>
+#include<stdio.h>
+//#include<stdlib.h>
+//#include<string.h>
+//#include<string>
+//#include<math.h>
+#include<algorithm>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    while(cin>>n){
+       int num[100*n];
+       int value,k=0;
+      while(scanf("%d",&value)!=EOF)
+        {
+         num[k++]=value;
+        }
+        sort(num,num+k);
+        int mn[2];
+      for(int i=1;i<k;++i){
+        if(num[i] != num[i-1]+1 && num[i] != num[i-1])
+                mn[0] = num[i-1]+1;
+        if (num[i] == num[i-1])
+                mn[1] = num[i];
+      }
+        cout<<mn[0]<<" "<<mn[1]<<endl;
+    }
+    return 0;
+}

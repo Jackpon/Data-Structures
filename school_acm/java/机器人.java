@@ -21,7 +21,7 @@
 2
 0
 */
-//直接暴力枚举
+//直接暴力枚举，但是时间超限
 import java.util.Scanner;
 
 public class Main {

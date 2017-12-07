@@ -65,3 +65,43 @@ public class Main {
 		out();
 	}
 }
+
+//C++
+#include<iostream>
+//#include<stdio.h>
+//#include<stdlib.h>
+#include<string.h>
+//#include<string>
+//#include<math.h>
+#include<algorithm>
+
+using namespace std;
+
+int main()
+{
+    string s;
+    int d;
+    while(cin>>s>>d){
+        char num[s.size()];
+        s.copy(num,s.size());
+        d = d%26;
+        for (int i = 0; i < sizeof(num)/sizeof(num[0]); i++) {
+        //处理大写字母
+        if ((num[i]+d) > 90 && num[i]<=90) {
+            num[i] = (char)(num[i]+d-26);
+            continue;
+        }
+        //处理小写字母
+        if ((num[i]+d) > 122 && num[i]>=97) {
+            num[i] = (char)(num[i]+d-26);
+            continue;
+        }
+        num[i] = (char)(num[i]+d);
+        }
+       for(int i=0;i<sizeof(num)/sizeof(num[0]);++i){
+         cout<<num[i];
+       }
+       cout<<endl;
+    }
+    return 0;
+}

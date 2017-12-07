@@ -92,3 +92,71 @@ public class Main {
 	}
 
 }
+//C++
+#include<iostream>
+#include<stdio.h>
+//#include<stdlib.h>
+#include<string.h>
+//#include<string>
+//#include<math.h>
+#include<algorithm>
+#define inttochar(x) ('0'+x)
+#define chartoint(x) (x-'0')
+using namespace std;
+
+int main()
+{
+    int n,m;
+    while(cin>>n>>m){
+      int A[n][n];
+      for(int i=0;i<n;++i){
+        for(int j=0;j<n;++j){
+          cin>>A[i][j];
+        }
+      }
+     //deal
+			for (int i = 0; i < n && m==0; i++)
+				for (int j = 0; j < n; j++) {
+					if (i==j)
+						A[i][j]=1;
+					else
+						A[i][j]=0;
+				}
+
+			int B[n][n];
+			int C[n][n] ;
+			for(int i=0;i<n;++i){
+        for(int j=0;j<n;++j){
+          B[i][j] = A[i][j];
+          C[i][j] = A[i][j];
+        }
+      }
+			while(m>1) {
+        memset(B,0,sizeof(B));
+				m--;
+				for (int i = 0; i < n; i++)
+					for (int j = 0; j < n; j++)
+						for (int j2 = 0; j2 < n; j2++)
+							B[i][j] += C[i][j2]*A[j2][j];
+
+				for(int i=0;i<n;++i){
+        for(int j=0;j<n;++j){
+          C[i][j] = B[i][j];
+        }
+      }
+
+    }
+
+			//out
+			for (int i = 0; i < n; i++) {
+				for (int j = 0; j < n; j++)
+					cout<<B[i][j]<<" ";
+				cout<<endl;
+    }
+    }
+    return 0;
+}
+
+
+
+
